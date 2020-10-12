@@ -1,0 +1,40 @@
+
+.header{
+    padding: 20px 70px;
+    background-color:#1D4363;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 75);
+}
+
+.header__left{
+    display: flex;
+    justify-content: space-evenly;
+}
+.header__left > img{
+    height: 40px;
+    cursor: pointer;
+}
+
+.header__right{
+    color: white;
+    display: flex;
+    justify-items: center;
+}
+
+.header__right > h3, .header__option{
+    padding: 0px 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.header__option:hover{
+    color: #80B1DA;
+}
+
+.header__right >h3:hover{
+    color: red;
+}
