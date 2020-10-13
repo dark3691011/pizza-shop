@@ -1,5 +1,5 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -16,16 +16,16 @@ function Header() {
                 <div className="header__option">                    
                     <AccountCircleIcon/>
                 </div>
-                <h3>ĐĂNG KÝ</h3>
+                <h4>ĐĂNG KÝ</h4>
                 <p>/</p>
-                <h3>ĐĂNG NHẬP</h3>
+                <h4>ĐĂNG NHẬP</h4>
                 <div className="header__option">
                     <FacebookIcon/>
                 </div>
                 <div className="header__option">
                     <InstagramIcon/>
                 </div>
-                <h3>THEO DÕI ĐƠN HÀNG</h3>
+                <h4>THEO DÕI ĐƠN HÀNG</h4>
                 <div className="header__option">
                     <ShoppingBasketIcon/>
                 </div>
