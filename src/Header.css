@@ -11,10 +11,10 @@
 
 .header__left{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
-.header__left > img{
-    height: 40px;
+.header__left > a >img{
+    height: 30px;
     cursor: pointer;
 }
 

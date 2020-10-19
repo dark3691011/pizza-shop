@@ -10,7 +10,7 @@ function Header() {
     return (
         <div className="header">
             <div className="header__left">
-                <img alt="" src="https://dominos.vn/Data/Sites/1/media/default2/img/logo.png"/>
+                <a href="./"><img alt="" src="https://dominos.vn/Data/Sites/1/media/default2/img/logo.png"/></a>               
             </div>
             <div className="header__right">
                 <div className="header__option">                    

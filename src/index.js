@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Category from './components/category/Category';
+import Header from './Header';
+import Footer from './Footer';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Header/>
+    <Route path ="/" exact component ={App}/>
+    <Route path ="/category" component ={Category}/>
+    <Footer/>
+  </Router>,
   document.getElementById('root')
 );
 

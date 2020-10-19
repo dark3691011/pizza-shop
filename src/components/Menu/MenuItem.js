@@ -8,7 +8,9 @@ function MenuItem({id, name, image}) {
                 <p>{name}</p>
             </div>
             <div className="menu__item__button">
-                <p>XEM THÊM</p>
+                <a href="/category">
+                    XEM THÊM
+                </a>
             </div>
         </div>
     )

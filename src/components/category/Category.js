@@ -7,8 +7,11 @@ function Category() {
     return (
         <div className="category">
             <div className="category__header">
-                <ButtonTop name="asd"/>
-
+                <ButtonTop name="PIZZA"/>
+                <ButtonTop name="MÓN ĂN KÈM"/>
+                <ButtonTop name="GIẢI KHÁT"/>
+                <ButtonTop name="TRÁNG MIỆNG"/>
+                <ButtonTop name="KHUYẾN MÃI"/>
             </div>
             <div className="category__list">
                 <div className="category__list__left">

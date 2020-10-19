@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './ButtonTop.css'
 
 ButtonTop.protoTypes = {
     name: PropTypes.string
 }
 
 ButtonTop.defaultProps = {
-    name: "asfasd"
+    name: "PIZZA"
 }
 
 function ButtonTop(props) {
@@ -14,10 +15,9 @@ function ButtonTop(props) {
 
     return (
         <div className="button__top">
-            {/* {name.map(name => (
-                <p> {name}</p>
-            ))} */}
-            {name}
+            <div className="button__top__main">
+                <p>{name}</p>
+            </div>
         </div>
     )
 }

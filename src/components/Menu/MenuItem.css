@@ -19,19 +19,25 @@
     color: white;
 }
 
-.menu__item__button{
+.menu__item__button {
     width: 200px;
     background: linear-gradient(0deg,#8E2D31,#CD444A);
     border: 1px solid #8E2D31;
     border-radius: 10px;
-    text-align: center;
+    display: flex;
 }
-.menu__item__button > p{
+
+.menu__item__button > a{
+    padding: 10px;
+    display: flex;
+    flex: 100%;
+    justify-content: center;
+    text-decoration: none;
     color: white;
     font-size: large;
     font-weight: bold;
-    padding: 10px;
 }
+
 .menu__item__button :hover{
     cursor: pointer;
     background: linear-gradient(0deg,#CD444A,#8E2D31);
