@@ -24,16 +24,22 @@
     justify-items: center;
 }
 
-.header__right > h4, .header__option{
+.header__right > .header__option{
     padding: 0px 5px;
     color: white;
     cursor: pointer;
+}
+
+.header__right > a > h4 {
+    padding: 0px 5px;
+    text-decoration: none;
+    color: white;
 }
 
 .header__option:hover{
     color: #80B1DA;
 }
 
-.header__right >h4:hover{
+.header__right > a :hover{
     color: red;
 }

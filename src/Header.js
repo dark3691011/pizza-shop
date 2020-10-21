@@ -16,9 +16,9 @@ function Header() {
                 <div className="header__option">                    
                     <AccountCircleIcon/>
                 </div>
-                <h4>ĐĂNG KÝ</h4>
+                <a href="./register"><h4>ĐĂNG KÝ</h4></a>
                 <p>/</p>
-                <h4>ĐĂNG NHẬP</h4>
+                <a href="./login"><h4>ĐĂNG NHẬP</h4></a>
                 <div className="header__option">
                     <FacebookIcon/>
                 </div>
