@@ -6,7 +6,7 @@ function Register() {
         <div className="register">
             <form>
                 <h1>ĐĂNG KÝ TÀI KHOẢN</h1>
-                <h5>Thông tin đăng nhập</h5>
+                <h4>Thông tin đăng nhập</h4>
                 <p>EMAIL</p>
                 <input type="text"/>
                 <p>MẬT KHẨU</p>

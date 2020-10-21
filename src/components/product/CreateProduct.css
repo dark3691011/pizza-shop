@@ -1,0 +1,37 @@
+.create__product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.create__product > form {
+    padding: 30px;
+    display: flex;
+    color: #1D4363;
+}
+
+.create__product > form > p, input, button {
+    margin-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.create__product > form > p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.create__product > form > input {
+    border: 0.5px solid #1D4363;
+    border-radius: 10px;
+}
+
+.create__product > form > button {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #E7544F;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
