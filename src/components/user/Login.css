@@ -22,13 +22,13 @@
     margin-bottom: 20px;
 }
 
-.login > form > p {
+.login__form__group >label {
     margin-bottom: 5px;
     font-size: 15px;
     font-weight: bold;
 }
 
-.login > form > input {
+.login__form__group > input {
     margin-bottom: 15px;
     height: 30px;
     border: 0.5px solid #1D4363;
