@@ -1,4 +1,6 @@
 .create__product {
+    margin-top: 10px;
+    border: 1px solid #1D4363;
     display: flex;
     align-items: center;
     justify-content: center;
