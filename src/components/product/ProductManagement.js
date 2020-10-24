@@ -1,10 +1,20 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import './ProductManagement.css';
+import axios from 'axios';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import CreateProduct from './CreateProduct';
 
 function ProductManagement() {
+    const [productList, setProductList] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://ec2-13-229-108-245.ap-southeast-1.compute.amazonaws.com:8080/api/product?page=0&rows=0")
+        .then (res => {
+            setProductList(res.data.pagingData);
+        })
+    }, []);
+
     return (
         <div className="product__management">
             <CreateProduct/>
@@ -16,24 +26,26 @@ function ProductManagement() {
                     <th>HÌNH ẢNH</th>
                     <th>THAO TÁC</th>
                 </tr>
-                <tr>
-                    <td>
-                        <p>1</p>
-                    </td>
-                    <td>
-                        <p>Pizza thịt chó</p>
-                    </td>
-                    <td>
-                        <p>Pizza</p>
-                    </td>
-                    <td>
-                        <img src="https://dominos.vn/Data/Sites/1/Product/829/pizzamin-sea.png" />
-                    </td>
-                    <td>
-                        <DeleteIcon/>
-                        <EditIcon/>
-                    </td>
-                </tr>
+                {productList.map(item => (
+                    <tr>
+                        <td>
+                            <p>{item.id}</p>
+                        </td>
+                        <td>
+                            <p>{item.name}</p>
+                        </td>
+                        <td>
+                            <p>{item.categoryName}</p>
+                        </td>
+                        <td>
+                            <img alt="" src={item.img} />
+                        </td>
+                        <td>
+                            <DeleteIcon/>
+                            <EditIcon/>
+                        </td>
+                    </tr>
+                ))}                
             </table>
         </div>
     )

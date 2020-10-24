@@ -1,4 +1,5 @@
 .product__management {
+    background-color: #D7D8DF;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,16 +12,15 @@
     text-align: center;
 }
 #product__management__table th {
-    border-right: 1px solid #ffffff;
     padding: 8px 0 8px 0;
     background-color: #1D4363;
     color: #ffffff;
 }
 #product__management__table td {
-    border-right: 1px solid #ffffff;
+    border-right: 1px solid #1D4363;
     padding: 8px 0 8px 0;
-    background-color: #2B608C;
-    color: #ffffff;
+    background-color: #E4EFF7;
+    color: #000000;
 }
 
 #product__management__table img {

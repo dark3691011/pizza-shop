@@ -1,18 +1,22 @@
 import React from 'react';
 import './CategoryItem.css';
 
-function CategoryItem() {
+function CategoryItem({name, description, image, price}) {
+
     return (
         <div className="category__item">
             <div className="category__item__detail">
                 <div className="category__item__image">
-                    <img alt="" src="https://dominos.vn/Data/Sites/1/Product/829/pizzamin-sea.png" />
+                    <img alt="" src={image} />
                 </div>
                 <div className="category__item__name">
-                    <p>PIZZA PHỞ</p>
+                    <p>{name}</p>
+                </div>
+                <div className="category__item__name">
+                    <p>{price} VND</p>
                 </div>
                 <div className="category__item__description">
-                    <p>Pizza chuẩn Mỹ, đậm vị quốc dân với thịt bò, bò viên, con các nó lắm thứ vãilone</p>
+                    <p>{description}</p>
                 </div>
                 <div className="category__item__button">
                     <p>THÊM VÀO ĐƠN HÀNG</p>
