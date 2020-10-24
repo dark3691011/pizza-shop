@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react';
 import './Login.css';
-import App from "../../App";
 
 function Login() {
     const adminUser = {
