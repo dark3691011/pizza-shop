@@ -43,3 +43,14 @@
 .header__right > a :hover{
     color: red;
 }
+
+.login__status{
+    display: flex;
+    justify-content: space-between;
+}
+
+.login__status > a{
+    padding: 0 3px 0 3px;
+    text-decoration: none;
+    color: white;
+}

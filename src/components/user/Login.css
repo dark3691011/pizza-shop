@@ -4,7 +4,11 @@
     justify-content: center;
 }
 .login > form {
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 30%;
+    border: 1px solid #1D4363;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,6 +26,23 @@
     margin-bottom: 20px;
 }
 
+.login > form > button {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 40px;
+    background-color: #E7544F;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.login__form__group{
+    display: flex;
+    flex-direction: column;
+}
+
 .login__form__group >label {
     margin-bottom: 5px;
     font-size: 15px;
@@ -35,14 +56,6 @@
     border-radius: 10px;
 }
 
-.login > form > button {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    height: 40px;
-    background-color: #E7544F;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+.error {
+    color: #E7544F;
 }

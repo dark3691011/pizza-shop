@@ -6,7 +6,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import StorageIcon from '@material-ui/icons/Storage';
 
-function Header() {
+function Header({email, Logout}) {
     return (
         <div className="header">
             <div className="header__left">
@@ -16,9 +16,18 @@ function Header() {
                 <div className="header__option">                    
                     <AccountCircleIcon/>
                 </div>
-                <a href="./register"><h4>ĐĂNG KÝ</h4></a>
-                <p>/</p>
-                <a href="./login"><h4>ĐĂNG NHẬP</h4></a>
+                {(email !== "") ?(
+                    <div className="login__status">
+                        <a href="./">{email}</a>
+                        <a href="./" onClick={Logout}><h4>ĐĂNG SUẤT</h4></a>
+                    </div>
+                ) : (
+                    <div className="login__status">
+                        <a href="./register"><h4>ĐĂNG KÝ</h4></a>
+                        <p>/</p>
+                        <a href="./login"><h4>ĐĂNG NHẬP</h4></a>
+                    </div>
+                )}
                 <div className="header__option">
                     <FacebookIcon/>
                 </div>
