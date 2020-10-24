@@ -3,6 +3,7 @@
     background-color:#1D4363;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     position: sticky;
     z-index: 100;
     top: 0;
@@ -24,7 +25,14 @@
     justify-items: center;
 }
 
-.header__right > .header__option{
+.header__right__plus{
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__option{
     padding: 0px 5px;
     color: white;
     cursor: pointer;
@@ -47,6 +55,7 @@
 .login__status{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .login__status > a{

@@ -4,12 +4,14 @@ import './Login.css';
 function Login() {
     const adminUser = {
         email: "admin@admin.com",
-        password: "admin123"
+        password: "admin123",
+        role: "admin"
     }
     
     const normalUser = {
         email: "user@user.com",
-        password: "user123"
+        password: "user123",
+        role: "user"
     }
     
     useEffect(() => {
@@ -25,25 +27,19 @@ function Login() {
         if(details.email === adminUser.email && details.password === adminUser.password){
             console.log("Logged in");
             localStorage.setItem("email", adminUser.email);
+            localStorage.setItem("role", adminUser.role);
             setUser({ email : localStorage.getItem("email")});
         }
         else if(details.email === normalUser.email && details.password === normalUser.password){
             console.log("Logged in");
             localStorage.setItem("email", normalUser.email);
+            localStorage.setItem("role", normalUser.role);
             setUser({ email : localStorage.getItem("email")});
         } else {
             setError("Sai thông tin đăng nhập!");
         }
     }
 
-    // const Logout = () => {
-    //     localStorage.setItem("email", "");
-    //     setUser({ email : localStorage.getItem("email")});
-    //     console.log(localStorage.getItem("email"))
-    //     console.log("Logout");
-    // }
-
-      
     const [details, setDetails] = useState({email: "", password: ""});
 
     const submitHandler = e => {
