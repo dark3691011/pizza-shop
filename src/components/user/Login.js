@@ -1,16 +1,59 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import './Login.css';
+import App from "../../App";
 
-function Login({Login, error}) {
+function Login() {
+    const adminUser = {
+        email: "admin@admin.com",
+        password: "admin123"
+    }
+    
+    const normalUser = {
+        email: "user@user.com",
+        password: "user123"
+    }
+    
+    useEffect(() => {
+        setUser({ email : localStorage.getItem("email")});
+    },[])
+
+
+    const[user, setUser] = useState({email: ""});
+    const [error, setError] = useState("");
+
+    const LoginFunction = details => {
+        console.log(details);
+        if(details.email === adminUser.email && details.password === adminUser.password){
+            console.log("Logged in");
+            localStorage.setItem("email", adminUser.email);
+            setUser({ email : localStorage.getItem("email")});
+        }
+        else if(details.email === normalUser.email && details.password === normalUser.password){
+            console.log("Logged in");
+            localStorage.setItem("email", normalUser.email);
+            setUser({ email : localStorage.getItem("email")});
+        } else {
+            setError("Sai thông tin đăng nhập!");
+        }
+    }
+
+    // const Logout = () => {
+    //     localStorage.setItem("email", "");
+    //     setUser({ email : localStorage.getItem("email")});
+    //     console.log(localStorage.getItem("email"))
+    //     console.log("Logout");
+    // }
+
+      
     const [details, setDetails] = useState({email: "", password: ""});
 
     const submitHandler = e => {
         e.preventDefault();
 
-        Login(details);
+        LoginFunction(details);
     }
 
-    return (
+    return (user.email === "") ? (
         <div className="login">
             <form onSubmit={submitHandler}>
                 <h1>ĐĂNG NHẬP</h1>
@@ -26,6 +69,12 @@ function Login({Login, error}) {
                 </div>
                 <button type="submit">ĐĂNG NHẬP</button>
             </form>
+        </div>
+    ) : (
+        <div>
+        {
+            window.location.pathname = '/'
+        }
         </div>
     )
 }
