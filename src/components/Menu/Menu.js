@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import '../../config';
 import './Menu.css';
 import MenuItem from './MenuItem';
 import axios from 'axios';
@@ -17,12 +18,17 @@ function Menu() {
     // }, []);
 
     useEffect(() => {
-        axios.get("http://ec2-13-229-108-245.ap-southeast-1.compute.amazonaws.com:8080/api/category")
+        console.log(global.config.server.link);
+        fetchItems();
+    }, []);
+
+    const fetchItems = async () => {
+        axios.get(`${global.config.server.link}/category`)
         .then(res => {
             setMenuItem(res.data);
             console.log(res.data);
         });
-    }, []);
+    }
 
     return (
         <div className="menu">
