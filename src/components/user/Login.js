@@ -22,7 +22,7 @@ function Login() {
     const[user, setUser] = useState({email: ""});
     const [error, setError] = useState("");
 
-    const LoginFunction = details => {
+    const login = details => {
         console.log(details);
         if(details.email === adminUser.email && details.password === adminUser.password){
             console.log("Logged in");
@@ -45,12 +45,12 @@ function Login() {
     const submitHandler = e => {
         e.preventDefault();
 
-        LoginFunction(details);
+        login(details);
     }
 
     return (user.email === "") ? (
         <div className="login">
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} id="login__form">
                 <h1>ĐĂNG NHẬP</h1>
                 {(error !== "") ? (<div className="error">{error}</div>) : ""}
                 <h4>Thông tin đăng nhập</h4>
