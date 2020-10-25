@@ -10,10 +10,10 @@ import StorageIcon from '@material-ui/icons/Storage';
 function Header({email, Logout}) {
     const navStyle = {
         color: 'white',
-        'text-decoration': 'none',
-        'margin-left' : '20px',
-        'font-weight' : 'bold',
-        'hover' : 'cursor'
+        textDecoration: 'none',
+        marginLeft : '20px',
+        fontWeight : 'bold',
+        hover : 'cursor'
     };
 
     return (
@@ -37,6 +37,7 @@ function Header({email, Logout}) {
                 {(localStorage.getItem("role") === "admin") ?(
                     <div className="header__right__plus">
                         <Link style={navStyle} to="/product-management">QLSP</Link>
+                        <Link style={navStyle} to="/menu-management">QLMN</Link>
                     </div>
                 ) : (
                     <div className="header__right__plus">

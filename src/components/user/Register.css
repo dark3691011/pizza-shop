@@ -22,13 +22,19 @@
     margin-bottom: 20px;
 }
 
-.register > form > p {
+.register__form__group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register__form__group > label {
     margin-bottom: 5px;
     font-size: 15px;
     font-weight: bold;
 }
 
-.register > form > input {
+.register__form__group > input {
     margin-bottom: 15px;
     height: 30px;
     border: 0.5px solid #1D4363;

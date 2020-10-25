@@ -8,6 +8,8 @@ import Login from './components/user/Login';
 import Register from './components/user/Register';
 import Category from './components/category/Category';
 import ProductManagement from './components/product/ProductManagement';
+import MenuManagement from './components/menu/MenuManagement';
+import UpdateProduct from './components/product/UpdateProduct';
 
 function App() {
 
@@ -35,8 +37,11 @@ function App() {
           <Route path="/" exact component={Menu} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register}/>
-          <Route path="/category" component={Category}/>
+          <Route path="/category" exact component={Category}/>
+          <Route path="/category/:id" component={Category}/>
           <Route path="/product-management" component={ProductManagement} />
+          <Route path="/menu-management" component={MenuManagement} />
+          <Route path="/update-product/:id" component={UpdateProduct} />
         </Switch>
 
         <Footer/>
