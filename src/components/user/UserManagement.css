@@ -1,0 +1,28 @@
+.user__management {
+    background-color: #D7D8DF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#user__management__table {
+    margin: 60px;
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+}
+#user__management__table th {
+    padding: 8px 0 8px 0;
+    background-color: #1D4363;
+    color: #ffffff;
+}
+#user__management__table td {
+    border-right: 1px solid #1D4363;
+    padding: 8px 0 8px 0;
+    background-color: #E4EFF7;
+    color: #000000;
+}
+
+#user__management__table img {
+    width: 50px;
+}

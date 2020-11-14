@@ -1,0 +1,32 @@
+.edit__user__info__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit__user__info{
+    margin: 40px;
+    padding: 40px;
+    min-width: 40vw;
+    background-color: #1D4363;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit__user__info__item{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.edit__user__info__item > label,p {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.edit__user__info > :hover{
+    cursor: pointer;
+}
