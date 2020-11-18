@@ -25,7 +25,7 @@
     width: 90%;
 }
 
-.category__item__name {
+.category__item__name > p{
     display: flex;
     justify-content: center;
     font-size: 20px;
@@ -33,7 +33,7 @@
     color: #235986;
 }
 
-.category__item__description {
+.category__item__description > p{
     color:  #235986;
     text-align: center;
 }

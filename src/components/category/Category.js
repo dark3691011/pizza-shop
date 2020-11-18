@@ -46,6 +46,34 @@ function Category({ match }) {
               price={item.price}
             />
           ))}
+          <CategoryItem
+            key="1"
+            name="PIZZA"
+            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
+            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
+            price="500000"
+          />
+          <CategoryItem
+            key="1"
+            name="PIZZA"
+            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
+            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
+            price="500000"
+          />
+          <CategoryItem
+            key="1"
+            name="PIZZA"
+            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
+            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
+            price="500000"
+          />
+          <CategoryItem
+            key="1"
+            name="PIZZA"
+            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
+            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
+            price="500000"
+          />
         </div>
         <div className='category__list__right'></div>
       </div>
