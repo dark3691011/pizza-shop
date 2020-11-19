@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Header.css';
+import logo from './image/logo.png';
 import { Link } from 'react-router-dom';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -32,7 +33,7 @@ function Header(props) {
         <Link to='/'>
           <img
             alt=''
-            src='https://dominos.vn/Data/Sites/1/media/default2/img/logo.png'
+            src={logo}
           />
         </Link>
       </div>

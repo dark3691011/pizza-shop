@@ -1,23 +1,60 @@
-import React from 'react'
+import React from 'react';
+import './ProductDetail.css'
 
 function ProductDetail() {
     return (
         <div className="product__detail">
             <div className="detail__left">
-                <img alt="" src="" />
-            </div>
-            <div className="detail__right">
-                <h4>Thông tin chi tiết</h4>
-                <h3 id="name" name="name">PIZZA ABC</h3>
-                <div className="detail__item">
-                    <label htmlFor="description">MÔ TẢ</label>
-                    <p>rgserdfgvsdfgvsdf</p>
+                <div className="description__product">
+                    <h3>PIZZA PHỞ</h3>
+                    <p>Pizza Phở giữ hương vị nguyên bản của món Phở truyền thống Việt Nam với nguyên liệu đặc trưng: thịt bò thái lát, bò viên, ngò gai, rau quế và hành tây, nước dùng thơm béo được nấu cô đặc tạo nên vị quê hương ai đi xa cũng nhớ. 
+                    Nguyên liệu của Phở được đặt trên đế bánh tươi, quyện cùng lớp phô mai Mozzarella thơm béo.</p>
                 </div>
-                <div className="detail__item">
-                    <label htmlFor="type">LOẠI</label>
-                    <p>asdas</p>
+                <div className="image__product">
+                    <img src="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png" alt="pizza pho"/>
+                    <h1>149.000 ₫</h1>
                 </div>
             </div>
+            <form className="detail__right">
+                <div className="detail__item">
+                    <h4>Cỡ bánh</h4>
+                    <div className="radio__detail">
+                        <input type="radio" id="size-m" name="size" value="size-m"/>
+                        <label htmlFor="size-m">Cỡ nhỏ</label>
+                    </div>
+                    <div className="radio__detail">
+                        <input type="radio" id="size-l" name="size" value="size-l"/>
+                        <label htmlFor="size-l">Cỡ lớn</label>
+                    </div>
+                </div>
+                <div className="detail__item">
+                    <h4>Đế bánh</h4>
+                    <div className="radio__detail">
+                        <input type="radio" id="size-m" name="base" value="size-m"/>
+                        <label htmlFor="size-m">Cỡ nhỏ</label>
+                    </div>
+                    <div className="radio__detail">
+                        <input type="radio" id="size-l" name="base" value="size-l"/>
+                        <label htmlFor="size-l">Cỡ lớn</label>
+                    </div>
+                </div>
+                <div className="detail__item">
+                    <h4>Tùy chọn thêm</h4>
+                    <div className="radio__detail">
+                        <input type="radio" id="no_topping" name="topping" value="no_topping"/>
+                        <label htmlFor="no_topping">Không thêm</label>
+                    </div>
+                    <div className="radio__detail">
+                        <input type="radio" id="size-m" name="topping" value="size-m"/>
+                        <label htmlFor="size-m">Thêm ít</label>
+                    </div>
+                    <div className="radio__detail">
+                        <input type="radio" id="size-l" name="topping" value="size-l"/>
+                        <label htmlFor="size-l">Thêm nhiều</label>
+                    </div>
+                </div>
+                <button type="submit">Đặt bánh</button>
+            </form>
         </div>
     )
 }

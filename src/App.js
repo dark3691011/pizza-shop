@@ -7,6 +7,7 @@ import Menu from './components/Menu/Menu';
 import Login from './components/user/Login';
 import Register from './components/user/Register';
 import Category from './components/category/Category';
+import ProductDetail from './components/category/ProductDetail';
 import ProductManagement from './components/product/ProductManagement';
 import MenuManagement from './components/Menu/MenuManagement';
 import UpdateProduct from './components/product/UpdateProduct';
@@ -61,6 +62,7 @@ function App() {
 
           <Route path='/category' exact component={Category} />
           <Route path='/category/:id' component={Category} />
+          <Route path='/product-detail' component={ProductDetail} />
           {user &&
             user.role === 'ADMIN' && [
               <Route path='/product-management' component={ProductManagement}/>,
