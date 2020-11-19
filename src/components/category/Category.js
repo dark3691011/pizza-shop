@@ -75,7 +75,20 @@ function Category({ match }) {
             price="500000"
           />
         </div>
-        <div className='category__list__right'></div>
+
+        <div className='category__list__right'>
+          <form className="search__product" >
+            <input type="text" placeholder="Nhập pizza muốn kiếm" id="value" name="value" />
+            <button type="submit">Tìm kiếm</button>
+          </form>
+          <form className="sort__product">
+            <select name="sort_type" id="sort_type">
+              <option value="sort_by_price">Tìm theo giá</option>
+              <option value="sort_by_date">Tìm theo sản phẩm mới</option>
+            </select> 
+            <button type="submit">Sắp xếp</button>
+          </form>
+        </div>
       </div>
     </div>
   );

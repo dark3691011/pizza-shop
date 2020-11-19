@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import StorageIcon from '@material-ui/icons/Storage';
 import { IsAuth } from './helper/auth';
 import { useDispatch, useSelector } from 'react-redux';
@@ -66,19 +66,19 @@ function Header(props) {
           </div>
         ) : (
           <div className='header__right__plus'>
-            <div className='header__option'>
+            {/* <div className='header__option'>
               <FacebookIcon />
             </div>
             <div className='header__option'>
               <InstagramIcon />
             </div>
-            <h4>THEO DÕI ĐƠN HÀNG</h4>
+            <h4>THEO DÕI ĐƠN HÀNG</h4> */}
             <div className='header__option'>
-              <ShoppingBasketIcon />
+              <ShoppingCartIcon />
             </div>
-            <div className='header__option'>
+            {/* <div className='header__option'>
               <StorageIcon />
-            </div>
+            </div> */}
           </div>
         )}
       </div>
