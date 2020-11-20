@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import './CartItem.css';
 
 function CartItem() {
     return (
-        <form className="cart__item">
+        <div className="cart__item">
             <div className="cart__item__left">
                 9" NEW YORK CRUST PIZZA PHO
             </div>
@@ -12,7 +13,7 @@ function CartItem() {
                     Bỏ chọn
                 </button>
             </div>
-        </form>
+        </div>
     )
 }
 

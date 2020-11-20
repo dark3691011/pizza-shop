@@ -75,7 +75,9 @@ function Header(props) {
             </div>
             <h4>THEO DÕI ĐƠN HÀNG</h4> */}
             <div className='header__option'>
-              <ShoppingCartIcon />
+              <Link style={navStyle} to="/cart">
+                <ShoppingCartIcon />
+              </Link>
             </div>
             {/* <div className='header__option'>
               <StorageIcon />
