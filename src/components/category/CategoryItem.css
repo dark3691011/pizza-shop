@@ -19,7 +19,6 @@
     padding: 20px;
     display: flex;
     justify-content: center;
-    cursor: pointer;
 }
 
 .category__item__image > img {
