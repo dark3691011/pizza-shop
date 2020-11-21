@@ -11,7 +11,7 @@ function ProductDetail() {
                 </Link>
             </div>
             <div className="product__detail">
-            <div className="detail__left">
+                <div className="detail__left">
                     <div className="description__product">
                         <h3>PIZZA PHỞ</h3>
                         <p>Pizza Phở giữ hương vị nguyên bản của món Phở truyền thống Việt Nam với nguyên liệu đặc trưng: thịt bò thái lát, bò viên, ngò gai, rau quế và hành tây, nước dùng thơm béo được nấu cô đặc tạo nên vị quê hương ai đi xa cũng nhớ. 
@@ -62,6 +62,13 @@ function ProductDetail() {
                     </div>
                     <button type="submit">Đặt bánh</button>
                 </form>
+                <ul class="ratings">
+                    <li class="star"></li>
+                    <li class="star"></li>
+                    <li class="star"></li>
+                    <li class="star"></li>
+                    <li class="star"></li>
+                </ul>
             </div>
         </div>
     )
