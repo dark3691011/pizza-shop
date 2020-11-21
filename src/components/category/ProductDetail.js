@@ -1,26 +1,27 @@
 import React,{useState, useEffect} from 'react';
 import './ProductDetail.css';
 import {Link} from 'react-router-dom';
-import '../../config';
+import { config } from '../../config';
+import axios from 'axios';
 
 function ProductDetail({match}) {
-    // const [product, setProduct] = useState();
+    const [product, setProduct] = useState();
 
-    // useEffect(() => {
-    //     fetchProduct();
-    // }, []);
+    useEffect(() => {
+        fetchProduct();
+    }, []);
 
-    // const fetchProduct = async () => {try {
-    //     let cateParams = '';
-    //     if (match.params.id) cateParams = `&categoryId=${match.params.id}`;
-    //     const response = await axios.get(
-    //       `${config.server.link}/product?page=0&rows=2${cateParams}`,
-    //     );
-    //     setProduct(response.data.pagingData);
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
+    const fetchProduct = async () => {try {
+        let cateParams = '';
+        if (match.params.id) cateParams = `&categoryId=${match.params.id}`;
+        const response = await axios.get(
+          `${config.server.link}/product?page=0&rows=2${cateParams}`,
+        );
+        setProduct(response.data.pagingData);
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     return (
         <div>
@@ -32,13 +33,13 @@ function ProductDetail({match}) {
             <div className="product__detail">
                 <div className="detail__left">
                     <div className="description__product">
-                        <h3>PIZZA PHỞ</h3>
-                        <p>Pizza Phở giữ hương vị nguyên bản của món Phở truyền thống Việt Nam với nguyên liệu đặc trưng: thịt bò thái lát, bò viên, ngò gai, rau quế và hành tây, nước dùng thơm béo được nấu cô đặc tạo nên vị quê hương ai đi xa cũng nhớ. 
+                        <h3>PIZZA PHỞ {product.name}</h3>
+                        <p>{product.description} Pizza Phở giữ hương vị nguyên bản của món Phở truyền thống Việt Nam với nguyên liệu đặc trưng: thịt bò thái lát, bò viên, ngò gai, rau quế và hành tây, nước dùng thơm béo được nấu cô đặc tạo nên vị quê hương ai đi xa cũng nhớ. 
                         Nguyên liệu của Phở được đặt trên đế bánh tươi, quyện cùng lớp phô mai Mozzarella thơm béo.</p>
                     </div>
                     <div className="image__product">
-                        <img src="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png" alt="pizza pho"/>
-                        <h1>149.000 ₫</h1>
+                        <img src={product.img} alt={product.name}/>
+                        <h1>{product.price} ₫</h1>
                     </div>
                 </div>
                 <form className="detail__right">
