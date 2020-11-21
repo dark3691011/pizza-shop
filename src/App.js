@@ -19,6 +19,7 @@ import UserInfo from './components/user/UserInfo';
 import EditUserInfo from './components/user/EditUserInfo';
 import EditPassword from './components/user/EditPassword';
 import Cart from './components/cart/Cart';
+import Checkout from './components/CheckOut/Checkout';
 
 function App() {
   useEffect(() => {}, []);
@@ -65,6 +66,7 @@ function App() {
           <Route path='/category/:id' component={Category} />
           <Route path='/product-detail' component={ProductDetail} />
           <Route path='/cart' component={Cart}/>
+          <Route path='/checkout' component={Checkout}/>
           {user &&
             user.role === 'ADMIN' && [
               <Route path='/product-management' component={ProductManagement}/>,
