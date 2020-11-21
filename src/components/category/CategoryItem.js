@@ -2,7 +2,7 @@ import React from 'react';
 import './CategoryItem.css';
 import {Link} from 'react-router-dom';
 
-function CategoryItem({name, description, image, price}) {
+function CategoryItem({id,name, description, image, price}) {
 
     return (
         <div className="category__item">
@@ -19,7 +19,7 @@ function CategoryItem({name, description, image, price}) {
                 <div className="category__item__description">
                     <p>{description}</p>
                 </div>
-                <Link to="/product-detail">
+                <Link to={`/product-detail/${id}`}>
                     <div className="category__item__button">
                         <p>THÊM VÀO ĐƠN HÀNG</p>
                     </div>            

@@ -64,7 +64,7 @@ function App() {
 
           <Route path='/category' exact component={Category} />
           <Route path='/category/:id' component={Category} />
-          <Route path='/product-detail' component={ProductDetail} />
+          <Route path='/product-detail/:id' component={ProductDetail} />
           <Route path='/cart' component={Cart}/>
           <Route path='/checkout' component={Checkout}/>
           {user &&

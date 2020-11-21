@@ -1,8 +1,27 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import './ProductDetail.css';
 import {Link} from 'react-router-dom';
+import '../../config';
 
-function ProductDetail() {
+function ProductDetail({match}) {
+    // const [product, setProduct] = useState();
+
+    // useEffect(() => {
+    //     fetchProduct();
+    // }, []);
+
+    // const fetchProduct = async () => {try {
+    //     let cateParams = '';
+    //     if (match.params.id) cateParams = `&categoryId=${match.params.id}`;
+    //     const response = await axios.get(
+    //       `${config.server.link}/product?page=0&rows=2${cateParams}`,
+    //     );
+    //     setProduct(response.data.pagingData);
+    //     } catch (error) {
+    //         console.log(error);
+    //     }
+    // };
+
     return (
         <div>
             <div className="go__back">

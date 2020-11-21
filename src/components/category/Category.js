@@ -40,6 +40,7 @@ function Category({ match }) {
           {productList.map((item) => (
             <CategoryItem
               key={item.id}
+              id={item.id}
               name={item.name}
               description={item.description}
               image={item.img}
