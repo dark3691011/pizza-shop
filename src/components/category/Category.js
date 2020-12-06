@@ -5,9 +5,14 @@ import './Category.css';
 // import ButtonTop from './ButtonTop';
 import axios from 'axios';
 import { config } from '../../config';
+import ProductModal from '../product/product-modal/product-modal';
 
 function Category({ match }) {
   const [productList, setProductList] = useState([]);
+  const [modal, setModal] = useState({
+    data: null,
+    isOpen: false,
+  });
 
   useEffect(() => {
     fetchItems();
@@ -15,15 +20,22 @@ function Category({ match }) {
 
   const fetchItems = async () => {
     try {
-      let cateParams = '';
-      if (match.params.id) cateParams = `&categoryId=${match.params.id}`;
-      const response = await axios.get(
-        `${config.server.link}/product?page=0&rows=2${cateParams}`,
-      );
-      setProductList(response.data.pagingData);
+      // let cateParams = '';
+      // if (match.params.id) cateParams = `&categoryId=${match.params.id}`;
+      // const response = await axios.get(
+      //   `${config.server.link}/product?page=0&rows=2${cateParams}`,
+      // );
+      // setProductList(response.data.pagingData);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const openModal = (isOpen, data) => {
+    const tempModal = { ...modal };
+    tempModal.isOpen = isOpen;
+    tempModal.data = data;
+    setModal(tempModal);
   };
 
   return (
@@ -37,9 +49,10 @@ function Category({ match }) {
             </div> */}
       <div className='category__list'>
         <div className='category__list__left'>
-          {productList.map((item) => (
+          {productList.map((item, index) => (
             <CategoryItem
-              key={item.id}
+              onClick={() => openModal(true, item)}
+              key={index}
               id={item.id}
               name={item.name}
               description={item.description}
@@ -48,49 +61,56 @@ function Category({ match }) {
             />
           ))}
           <CategoryItem
-            key="1"
-            name="PIZZA"
-            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
-            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
-            price="500000"
+            onClick={() => openModal(true, { name: 'abc' })}
+            key='1'
+            name='PIZZA'
+            description='Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!'
+            image='https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png'
+            price='500000'
           />
           <CategoryItem
-            key="1"
-            name="PIZZA"
-            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
-            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
-            price="500000"
+            key='1'
+            name='PIZZA'
+            description='Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!'
+            image='https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png'
+            price='500000'
           />
           <CategoryItem
-            key="1"
-            name="PIZZA"
-            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
-            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
-            price="500000"
+            key='1'
+            name='PIZZA'
+            description='Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!'
+            image='https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png'
+            price='500000'
           />
           <CategoryItem
-            key="1"
-            name="PIZZA"
-            description="Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!"
-            image="https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png"
-            price="500000"
+            key='1'
+            name='PIZZA'
+            description='Vừa có gà phô mai lại có thêm thịt heo muối mặn mặn ăn không biết ngán. Bàn tiệc đa dạng topping, sao không thử?!'
+            image='https://dominos.vn/Data/Sites/1/Product/830/pizza-pho.png'
+            price='500000'
           />
         </div>
 
         <div className='category__list__right'>
-          <form className="search__product" >
-            <input type="text" placeholder="Nhập pizza muốn kiếm" id="value" name="value" />
-            <button type="submit">Tìm kiếm</button>
+          <form className='search__product'>
+            <input
+              type='text'
+              placeholder='Nhập pizza muốn kiếm'
+              id='value'
+              name='value'
+            />
+            <button type='submit'>Tìm kiếm</button>
           </form>
-          <form className="sort__product">
-            <select name="sort_type" id="sort_type">
-              <option value="sort_by_price">Tìm theo giá</option>
-              <option value="sort_by_date">Tìm theo sản phẩm mới</option>
-            </select> 
-            <button type="submit">Sắp xếp</button>
+          <form className='sort__product'>
+            <select name='sort_type' id='sort_type'>
+              <option value='sort_by_price'>Tìm theo giá</option>
+              <option value='sort_by_date'>Tìm theo sản phẩm mới</option>
+            </select>
+            <button type='submit'>Sắp xếp</button>
           </form>
         </div>
       </div>
+      <ProductModal modal={modal} setModal={setModal} />
     </div>
   );
 }

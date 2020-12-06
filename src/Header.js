@@ -10,6 +10,7 @@ import StorageIcon from '@material-ui/icons/Storage';
 import { IsAuth } from './helper/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from './store/action/index';
+import ProductModal from './components/product/product-modal/product-modal';
 
 function Header(props) {
   const navStyle = {
@@ -19,7 +20,13 @@ function Header(props) {
     fontWeight: 'bold',
     hover: 'cursor',
   };
+  const [modal, setModal] = useState({
+    data: null,
+    isOpen: false,
+  });
+  const [cartAmount, setCartAmount] = useState(0);
   const token = useSelector((state) => state.auth.token);
+  const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
 
   const onLogout = () => {
@@ -27,20 +34,34 @@ function Header(props) {
     dispatch(actions.changeToken(''));
   };
 
+  useEffect(() => {
+    let sum = 0;
+    for (const item of cart) {
+      sum += item.amt;
+    }
+    setCartAmount(sum);
+  }, [cart]);
+
+  const openModal = (isOpen, data) => {
+    const tempModal = { ...modal };
+    tempModal.isOpen = isOpen;
+    tempModal.data = data;
+    setModal(tempModal);
+  };
+
   return (
     <div className='header'>
       <div className='header__left'>
         <Link to='/'>
-          <img
-            alt=''
-            src={logo}
-          />
+          <img alt='' src={logo} />
         </Link>
       </div>
       <div className='header__right'>
         {token !== '' ? (
           <div className='login__status'>
-            <Link to='/user-info'><AccountCircleIcon /></Link>
+            <Link to='/user-info'>
+              <AccountCircleIcon />
+            </Link>
             <Link to='/login' onClick={() => onLogout()}>
               <h4>ĐĂNG XUẤT</h4>
             </Link>
@@ -74,10 +95,9 @@ function Header(props) {
               <InstagramIcon />
             </div>
             <h4>THEO DÕI ĐƠN HÀNG</h4> */}
-            <div className='header__option'>
-              <Link style={navStyle} to="/cart">
-                <ShoppingCartIcon />
-              </Link>
+            <div className='header__option' onClick={() => openModal(true, { name: 'abc' })}>
+              <div>{cartAmount}</div>
+              <ShoppingCartIcon />
             </div>
             {/* <div className='header__option'>
               <StorageIcon />
@@ -85,6 +105,7 @@ function Header(props) {
           </div>
         )}
       </div>
+      <ProductModal modal={modal} setModal={setModal} />
     </div>
   );
 }

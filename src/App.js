@@ -20,6 +20,9 @@ import EditUserInfo from './components/user/EditUserInfo';
 import EditPassword from './components/user/EditPassword';
 import Cart from './components/cart/Cart';
 import Checkout from './components/CheckOut/Checkout';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 function App() {
   useEffect(() => {}, []);
@@ -48,7 +51,6 @@ function App() {
     <Router>
       <div className='app'>
         <Header />
-
         <Switch>
           <Route path='/' exact component={Menu} />
           {!user.isAuth && [
@@ -57,25 +59,28 @@ function App() {
           ]}
 
           {user.isAuth && [
-            <Route path='/user-info' component={UserInfo}/>,
-            <Route path='/edit-user-info' component={EditUserInfo}/>,
-            <Route path='/edit-password' component={EditPassword}/>
+            <Route path='/user-info' component={UserInfo} />,
+            <Route path='/edit-user-info' component={EditUserInfo} />,
+            <Route path='/edit-password' component={EditPassword} />,
           ]}
 
           <Route path='/category' exact component={Category} />
           <Route path='/category/:id' component={Category} />
           <Route path='/product-detail/:id' component={ProductDetail} />
-          <Route path='/cart' component={Cart}/>
-          <Route path='/checkout' component={Checkout}/>
+          <Route path='/cart' component={Cart} />
+          <Route path='/checkout' component={Checkout} />
           {user &&
             user.role === 'ADMIN' && [
-              <Route path='/product-management' component={ProductManagement}/>,
+              <Route
+                path='/product-management'
+                component={ProductManagement}
+              />,
               <Route path='/user-management' component={UserManagement} />,
               <Route path='/menu-management' component={MenuManagement} />,
               <Route path='/update-product/:id' component={UpdateProduct} />,
             ]}
         </Switch>
-
+        {/* modal cart */}
         <Footer />
       </div>
     </Router>
