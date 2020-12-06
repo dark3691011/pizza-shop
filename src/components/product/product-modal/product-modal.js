@@ -21,7 +21,7 @@ function ProductModal(props) {
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
 
-  const addToCart = (data) => {
+  const addToCart = (data) => {    
     const tempCart = [...cart];
     const itemExisted = tempCart.find((item) => item.name === data.name);
     if (itemExisted) {
@@ -53,7 +53,7 @@ function ProductModal(props) {
                       <h1>500000 ₫</h1>
                   </div>
               </div>
-              <form className="detail__right" onSubmit={() => addToCart(modal.data)}>
+              <div className="detail__right">
                   <div className="detail__item">
                       <h4>Cỡ bánh</h4>
                       <div className="radio__detail">
@@ -91,8 +91,8 @@ function ProductModal(props) {
                           <label htmlFor="size-l">Thêm nhiều</label>
                       </div>
                   </div>
-                  <button type="submit">Đặt bánh</button>
-              </form>
+                  <button onClick={() => addToCart(modal.data)}>Đặt bánh</button>
+              </div>
               <ul class="ratings">
                   <li class="star"></li>
                   <li class="star"></li>

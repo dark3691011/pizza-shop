@@ -8,6 +8,32 @@
     font-weight: bold;
     color: #1A3D5A;
 }
+.cart__item__left{
+    flex: 70%;
+}
+.cart__item__right{
+    flex: 30%;
+}
+
+.quantity{
+    margin: 0px 10px 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quantity > div{
+    margin: 0px 10px 0px 10px;
+}
+.quantity > input{
+    max-width: 30px;
+}
+.add,.remove{
+    width: 10px;
+    height: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .cart__item__right{
     display: flex;
     justify-content: center;

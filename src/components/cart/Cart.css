@@ -1,17 +1,21 @@
-.cart__container{
+/* .cart__container{
+    max-width: 10vw;
+    max-height: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+} */
 .cart{
-    margin: 15vh;
-    width: 60vw;
     display: flex;
     flex-direction: column;
-    border: 2px solid #1A3D5A;
-    border-radius: 20px;
-    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cart__detail{
+    width: 100%;
 }
 
 .cart__detail > h2{

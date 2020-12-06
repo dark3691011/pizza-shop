@@ -10,7 +10,7 @@ import StorageIcon from '@material-ui/icons/Storage';
 import { IsAuth } from './helper/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import * as actions from './store/action/index';
-import ProductModal from './components/product/product-modal/product-modal';
+import CartModal from './components/cart/cart-modal/cart-modal';
 
 function Header(props) {
   const navStyle = {
@@ -105,7 +105,7 @@ function Header(props) {
           </div>
         )}
       </div>
-      <ProductModal modal={modal} setModal={setModal} />
+      <CartModal modal={modal} setModal={setModal} />
     </div>
   );
 }
