@@ -21,7 +21,8 @@ function ProductModal(props) {
   const cart = useSelector((state) => state.cart.cart);
   const dispatch = useDispatch();
 
-  const addToCart = (data) => {    
+  const addToCart = (data) => {  
+    const tempModal = {...modal}  
     const tempCart = [...cart];
     const itemExisted = tempCart.find((item) => item.name === data.name);
     if (itemExisted) {
@@ -29,6 +30,8 @@ function ProductModal(props) {
     } else {
       tempCart.push({ name: data.name, amt: 1 });
     }
+    tempModal.isOpen = false;
+    setModal(tempModal)
     dispatch(actions.updateCart(tempCart));
   };
 
@@ -68,12 +71,12 @@ function ProductModal(props) {
                   <div className="detail__item">
                       <h4>Đế bánh</h4>
                       <div className="radio__detail">
-                          <input type="radio" id="size-m" name="base" value="size-m"/>
-                          <label htmlFor="size-m">Cỡ nhỏ</label>
+                          <input type="radio" id="base-m" name="base" value="size-m"/>
+                          <label htmlFor="base-m">Cỡ nhỏ</label>
                       </div>
                       <div className="radio__detail">
-                          <input type="radio" id="size-l" name="base" value="size-l"/>
-                          <label htmlFor="size-l">Cỡ lớn</label>
+                          <input type="radio" id="base-l" name="base" value="size-l"/>
+                          <label htmlFor="base-l">Cỡ lớn</label>
                       </div>
                   </div>
                   <div className="detail__item">
@@ -83,12 +86,12 @@ function ProductModal(props) {
                           <label htmlFor="no_topping">Không thêm</label>
                       </div>
                       <div className="radio__detail">
-                          <input type="radio" id="size-m" name="topping" value="size-m"/>
-                          <label htmlFor="size-m">Thêm ít</label>
+                          <input type="radio" id="topping-m" name="topping" value="size-m"/>
+                          <label htmlFor="topping-m">Thêm ít</label>
                       </div>
                       <div className="radio__detail">
-                          <input type="radio" id="size-l" name="topping" value="size-l"/>
-                          <label htmlFor="size-l">Thêm nhiều</label>
+                          <input type="radio" id="topping-l" name="topping" value="size-l"/>
+                          <label htmlFor="topping-l">Thêm nhiều</label>
                       </div>
                   </div>
                   <button onClick={() => addToCart(modal.data)}>Đặt bánh</button>

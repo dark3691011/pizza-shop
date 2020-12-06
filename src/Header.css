@@ -38,6 +38,20 @@
     color: white;
     cursor: pointer;
 }
+.header__option > span{
+    position: absolute;
+    background: #e31837;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .75rem;
+    color: #fff;
+    right: 5%;
+    top: 18px;
+}
 
 .header__right > a > h4 {
     padding: 0px 5px;

@@ -96,7 +96,7 @@ function Header(props) {
             </div>
             <h4>THEO DÕI ĐƠN HÀNG</h4> */}
             <div className='header__option' onClick={() => openModal(true, { name: 'abc' })}>
-              <div>{cartAmount}</div>
+              <span>{cartAmount}</span>
               <ShoppingCartIcon />
             </div>
             {/* <div className='header__option'>
